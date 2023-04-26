@@ -1,0 +1,46 @@
+<div>
+    <header>
+        <!--Still need to add menubar into header-->
+        <span>{{ pageName }}</span>
+    </header>
+    <table class="table table-secondary table-hover" *ngIf="user">
+        <tbody>
+            <tr>
+                <td>Id</td>
+                <td><input [(ngModel)]="user.id" readonly></td>
+            </tr>
+            <tr>
+                <td>Username</td>
+                <td><input [(ngModel)]="user.username" readonly></td>
+            </tr>
+            <tr>
+                <td>Password</td>
+                <td><input [(ngModel)]="user.password" readonly></td>
+            </tr>
+            <tr>
+                <td>First Name</td>
+                <td><input [(ngModel)]="user.firstName" readonly></td>
+            </tr>
+            <tr>
+                <td>Last Name</td>
+                <td><input [(ngModel)]="user.lastName" readonly></td>
+            </tr>
+            <tr>
+                <td>Phone Number</td>
+                <td><input [(ngModel)]="user.phoneNumber" readonly></td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td><input [(ngModel)]="user.email" readonly></td>
+            </tr>
+            <tr>
+                <td>Reviewer?</td>
+                <td><input [(ngModel)]="user.isReviewer" readonly></td>
+            </tr>
+            <tr>
+                <td>Admin?</td>
+                <td><input [(ngModel)]="user.isAdmin" readonly></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
