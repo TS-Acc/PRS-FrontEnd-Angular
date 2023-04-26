@@ -1,1 +1,48 @@
-<p>vendor-create works!</p>
+<div>
+    <header>
+        <app-menu-bar></app-menu-bar>
+        <span>{{ pageName }}</span>
+    </header>
+    <table class="table table-secondary table-hover">
+        <tbody>
+            <tr>
+                <td>Id</td>
+                <td><input [(ngModel)]="newVendor.id" readonly></td>
+            </tr>
+            <tr>
+                <td>Code</td>
+                <td><input [(ngModel)]="newVendor.code"></td>
+            </tr>
+            <tr>
+                <td>Name</td>
+                <td><input [(ngModel)]="newVendor.name"></td>
+            </tr>
+            <tr>
+                <td>Address</td>
+                <td><input [(ngModel)]="newVendor.address"></td>
+            </tr>
+            <tr>
+                <td>City</td>
+                <td><input [(ngModel)]="newVendor.city"></td>
+            </tr>
+            <tr>
+                <td>State</td>
+                <td><input [(ngModel)]="newVendor.state"></td>
+            </tr>
+            <tr>
+                <td>Zip Code</td>
+                <td><input [(ngModel)]="newVendor.zipCode"></td>
+            </tr>
+            <tr>
+                <td>Phone Number</td>
+                <td><input [(ngModel)]="newVendor.phoneNumber"></td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td><input [(ngModel)]="newVendor.email"></td>
+            </tr>
+        </tbody>
+    </table>
+    <button (click)="createVendor()" class="btn btn-outline-secondary">Create</button>
+</div>
+
