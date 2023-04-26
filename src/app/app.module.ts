@@ -12,6 +12,7 @@ import { UserListComponent } from './user/user-list/user-list.component';
 import { UserChangeComponent } from './user/user-change/user-change.component';
 import { UserDetailComponent } from './user/user-detail/user-detail.component';
 import { UserCreateComponent } from './user/user-create/user-create.component';
+import { MenuBarComponent } from './menu/menu-bar/menu-bar.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { UserCreateComponent } from './user/user-create/user-create.component';
     UserChangeComponent,
     UserDetailComponent,
     UserCreateComponent,
+    MenuBarComponent,
   ],
   imports: [
     BrowserModule,
