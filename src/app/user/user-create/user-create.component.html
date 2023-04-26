@@ -1,1 +1,47 @@
-<p>user-create works!</p>
+<div>
+    <header>
+        <!--Still need to add menubar into header-->
+        <span>{{ pageName }}</span>
+    </header>
+    <table class="table table-secondary table-hover">
+        <tbody>
+            <tr>
+                <td>Id</td>
+                <td><input [(ngModel)]="newUser.id" readonly></td>
+            </tr>
+            <tr>
+                <td>Username</td>
+                <td><input [(ngModel)]="newUser.username"></td>
+            </tr>
+            <tr>
+                <td>Password</td>
+                <td><input [(ngModel)]="newUser.password"></td>
+            </tr>
+            <tr>
+                <td>First Name</td>
+                <td><input [(ngModel)]="newUser.firstName"></td>
+            </tr>
+            <tr>
+                <td>Last Name</td>
+                <td><input [(ngModel)]="newUser.lastName"></td>
+            </tr>
+            <tr>
+                <td>Phone Number</td>
+                <td><input [(ngModel)]="newUser.phoneNumber"></td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td><input [(ngModel)]="newUser.email"></td>
+            </tr>
+            <tr>
+                <td>Reviewer?</td>
+                <td><input [(ngModel)]="newUser.isReviewer"></td>
+            </tr>
+            <tr>
+                <td>Admin?</td>
+                <td><input [(ngModel)]="newUser.isAdmin"></td>
+            </tr>
+        </tbody>
+    </table>
+    <button (click)="createUser()" class="btn btn-outline-secondary">Create</button>
+</div>

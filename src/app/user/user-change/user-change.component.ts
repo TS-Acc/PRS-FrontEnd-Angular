@@ -15,9 +15,9 @@ export class UserChangeComponent {
   user!: User;
 
   constructor(
-    private userService: UserService,
     private activatedRoute: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private userService: UserService
   ) { }
 
   saveUser(): void {

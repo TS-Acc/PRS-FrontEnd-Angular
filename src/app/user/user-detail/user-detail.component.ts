@@ -12,13 +12,30 @@ import { UserService } from '../user.service';
 export class UserDetailComponent {
 
   pageName = "User Detail";
+  displayVerifyButton = false;
   user!: User;
 
   constructor(
-    private userService: UserService,
     private activatedRoute: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private userService: UserService
   ) { }
+
+  removeUser(): void {
+    this.userService.remove(this.user.id).subscribe({
+      next: (response) => {
+        console.debug("User Deleted!", response);
+        this.router.navigateByUrl("/user/user-list");
+      },
+      error: (error) => {
+        console.error(error);
+      }
+    });
+  }
+
+  showVerifyDeleteButton(): void {
+    this.displayVerifyButton = !this.displayVerifyButton;
+  }
 
   ngOnInit(): void {
     let id: number = Number(this.activatedRoute.snapshot.params["id"]);
