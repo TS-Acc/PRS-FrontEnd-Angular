@@ -43,4 +43,9 @@
             </tr>
         </tbody>
     </table>
+    <button (click)="showVerifyDeleteButton()" class="btn btn-outline-danger"><i class="bi bi-trash3-fill"></i></button>
+    <span *ngIf="displayVerifyButton">
+        <span> | </span>
+        <button (click)="removeUser()" class="btn btn-outline-danger">Confirm Delete</button>
+    </span>
 </div>
