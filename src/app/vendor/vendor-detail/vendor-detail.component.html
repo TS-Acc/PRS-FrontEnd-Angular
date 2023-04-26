@@ -1,0 +1,51 @@
+<div>
+    <header>
+        <app-menu-bar></app-menu-bar>
+        <span>{{ pageName }}</span>
+    </header>
+    <table class="table table-secondary table-hover" *ngIf="vendor">
+        <tbody>
+            <tr>
+                <td>Id</td>
+                <td><input [(ngModel)]="vendor.id" readonly></td>
+            </tr>
+            <tr>
+                <td>Code</td>
+                <td><input [(ngModel)]="vendor.code" readonly></td>
+            </tr>
+            <tr>
+                <td>Name</td>
+                <td><input [(ngModel)]="vendor.name" readonly></td>
+            </tr>
+            <tr>
+                <td>Address</td>
+                <td><input [(ngModel)]="vendor.address" readonly></td>
+            </tr>
+            <tr>
+                <td>City</td>
+                <td><input [(ngModel)]="vendor.city" readonly></td>
+            </tr>
+            <tr>
+                <td>State</td>
+                <td><input [(ngModel)]="vendor.state" readonly></td>
+            </tr>
+            <tr>
+                <td>Zip Code</td>
+                <td><input [(ngModel)]="vendor.zipCode" readonly></td>
+            </tr>
+            <tr>
+                <td>Phone Number</td>
+                <td><input [(ngModel)]="vendor.phoneNumber" readonly></td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td><input [(ngModel)]="vendor.email" readonly></td>
+            </tr>
+        </tbody>
+    </table>
+    <button (click)="showVerifyDeleteButton()" class="btn btn-outline-danger"><i class="bi bi-trash3-fill"></i></button>
+    <span *ngIf="displayVerifyButton">
+        <span> | </span>
+        <button (click)="removeVendor()" class="btn btn-outline-danger">Confirm Delete</button>
+    </span>
+</div>

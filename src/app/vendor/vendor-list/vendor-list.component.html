@@ -1,0 +1,42 @@
+<div>
+    <header>
+        <app-menu-bar></app-menu-bar>
+        <span>{{ pageName }}</span>
+        <span> | </span>
+        <button routerLink="/vendor/vendor-create" class="btn btn-outline-secondary btn-sm">Create New Vendor <i class="bi bi-plus-circle-fill"></i></button>
+    </header>
+    <table class="table table-secondary table-hover">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Code</th>
+                <th>Name</th>
+                <th>Address</th>
+                <th>City</th>
+                <th>State</th>
+                <th>Zip Code</th>
+                <th>Phone Number</th>
+                <th>Email</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody class="table-group-divider">
+            <tr *ngFor="let vendor of vendors">
+                <td>{{ vendor.id }}</td>
+                <td>{{ vendor.code }}</td>
+                <td>{{ vendor.name }}</td>
+                <td>{{ vendor.address }}</td>
+                <td>{{ vendor.city }}</td>
+                <td>{{ vendor.state }}</td>
+                <td>{{ vendor.zipCode }}</td>
+                <td>{{ vendor.phoneNumber }}</td>
+                <td>{{ vendor.email }}</td>
+                <td>
+                    <button routerLink="/vendor/vendor-detail/{{ vendor.id }}" class="btn">Detail</button>
+                    <span> | </span>
+                    <button routerLink="/vendor/vendor-change/{{ vendor.id }}" class="btn"><i class="bi bi-gear-fill"></i></button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
