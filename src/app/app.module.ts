@@ -13,6 +13,11 @@ import { UserChangeComponent } from './user/user-change/user-change.component';
 import { UserDetailComponent } from './user/user-detail/user-detail.component';
 import { UserCreateComponent } from './user/user-create/user-create.component';
 import { MenuBarComponent } from './menu/menu-bar/menu-bar.component';
+import { LoginComponent } from './core/login/login.component';
+import { VendorListComponent } from './vendor/vendor-list/vendor-list.component';
+import { VendorDetailComponent } from './vendor/vendor-detail/vendor-detail.component';
+import { VendorCreateComponent } from './vendor/vendor-create/vendor-create.component';
+import { VendorChangeComponent } from './vendor/vendor-change/vendor-change.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +30,11 @@ import { MenuBarComponent } from './menu/menu-bar/menu-bar.component';
     UserDetailComponent,
     UserCreateComponent,
     MenuBarComponent,
+    LoginComponent,
+    VendorListComponent,
+    VendorDetailComponent,
+    VendorCreateComponent,
+    VendorChangeComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,17 @@
+<div>
+    <header>
+        <span>{{ pageName }}</span>
+    </header>
+    <table class="table">
+        <tr>
+            <td>Username:</td>
+            <td><input [(ngModel)]="username"></td>
+        </tr>
+        <tr>
+            <td>Password:</td>
+            <td><input [(ngModel)]="password" type="password"></td>
+        </tr>
+    </table>
+    <button (click)="login()" class="btn btn-success">Login</button>
+    <span *ngIf="showErrorMessage" class="text-danger fw-bold">{{ errorMessage }}</span>
+</div>
