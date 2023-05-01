@@ -13,7 +13,6 @@ export class ReviewRequestComponent {
 
   pageName = "Review Request";
   rejectionInputVisible: boolean = false;
-  rejectionReason: string = "";
   request!: Request;
 
   constructor(
@@ -35,13 +34,13 @@ export class ReviewRequestComponent {
   }
 
   markAsRejected(request: Request): void {
-      this.requestService.rejectRequest(request).subscribe({
-        next: (response) => {
+    this.requestService.rejectRequest(request).subscribe({
+      next: (response) => {
         console.debug("Request Marked As Rejected!", response);
-        console.log("What is it", this.request);
+        console.log("Request:", request);
         this.router.navigateByUrl("/request/request-list")
-        },
-        error: (error) => {
+      },
+      error: (error) => {
         console.error(error);
       }
     });
@@ -51,17 +50,17 @@ export class ReviewRequestComponent {
     this.rejectionInputVisible = !this.rejectionInputVisible;
   }
 
-  updateRejectionReason(request: Request): void {
-    request.rejectionReason = this.rejectionReason;
-    this.requestService.change(request).subscribe({
-      next: (response) => {
-        console.debug("Rejection Reason Updated!", response);
-      },
-      error: (error) => {
-        console.error(error);
-      }
-    });
-  }
+  // updateRejectionReason(request: Request): void {
+  //   request.rejectionReason = this.rejectionReason;
+  //   this.requestService.change(request).subscribe({
+  //     next: (response) => {
+  //       console.debug("Rejection Reason Updated!", response);
+  //     },
+  //     error: (error) => {
+  //       console.error(error);
+  //     }
+  //   });
+  // }
 
   ngOnInit(): void {
     let id: number = Number(this.activatedRoute.snapshot.params["id"]);

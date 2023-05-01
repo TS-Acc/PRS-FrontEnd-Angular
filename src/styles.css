@@ -4,3 +4,18 @@
 input, select {
     border-radius: 7px;
 }
+
+#action-table-head {
+    padding-left: 45px;
+}
+
+#page-name {
+    font-weight: bold;
+    font-size: 1.3em;
+}
+
+#rejection {
+    color: red;
+    font-weight: bold;
+    font-size: 1.1em;
+}

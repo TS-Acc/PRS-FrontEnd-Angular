@@ -1,9 +1,9 @@
 <div>
     <header>
         <app-menu-bar></app-menu-bar>
-        <span>{{ pageName }}</span>
+        <span id="page-name">{{ pageName }}</span>
     </header>
-    <table class="table table-secondary table-hover" *ngIf="vendor">
+    <table class="table table-striped table-sm" *ngIf="vendor">
         <tbody>
             <tr>
                 <td>Id</td>
@@ -43,9 +43,9 @@
             </tr>
         </tbody>
     </table>
-    <button (click)="showVerifyDeleteButton()" class="btn btn-outline-danger"><i class="bi bi-trash3-fill"></i></button>
+    <button (click)="showVerifyDeleteButton()" class="btn btn-danger"><i class="bi bi-trash3-fill"></i></button>
     <span *ngIf="displayVerifyButton">
         <span> | </span>
-        <button (click)="removeVendor()" class="btn btn-outline-danger">Confirm Delete</button>
+        <button (click)="removeVendor()" class="btn btn-danger">Confirm Delete</button>
     </span>
 </div>

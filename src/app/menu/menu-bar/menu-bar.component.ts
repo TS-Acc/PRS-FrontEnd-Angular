@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 
 import { Menu } from '../menu.class';
 import { SystemService } from '../../core/system.service';
+import { User } from '../../user/user.class';
 
 @Component({
   selector: 'app-menu-bar',
@@ -10,6 +11,8 @@ import { SystemService } from '../../core/system.service';
   styleUrls: ['./menu-bar.component.css']
 })
 export class MenuBarComponent {
+
+  navBarUser: string = "";
 
   menus: Menu[] = [
     { display: "Users", route: "/user/user-list" },
@@ -29,6 +32,13 @@ export class MenuBarComponent {
   signOutUser(): void {
     this.systemService.setUserLoggedInToNull();
     this.router.navigateByUrl("/core/login");
+  }
+
+  ngOnInit(): void {
+    if(this.systemService.userLoggedIn !== null) {
+      let user: User = this.systemService.userLoggedIn;
+      this.navBarUser = user.username;
+    }
   }
 
 }

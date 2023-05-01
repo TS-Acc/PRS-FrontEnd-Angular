@@ -1,0 +1,18 @@
+#login-button {
+    margin-left: 130px;
+    margin-top: 10px;
+}
+
+#login-error-message {
+    padding-left: 55px;
+}
+
+#login-user-password {
+    font-weight: bold;
+}
+
+.login-page-name {
+    font-weight: bold;
+    font-size: 1.3em;
+    padding-left: 85px;
+}

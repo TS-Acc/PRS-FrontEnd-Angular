@@ -1,13 +1,13 @@
 <div>
     <header>
         <app-menu-bar></app-menu-bar>
-        <span>{{ pageName }}</span>
+        <span id="page-name">{{ pageName }}</span>
     </header>
-    <table class="table table-secondary table-hover" *ngIf="product">
+    <table class="table table-striped table-sm" *ngIf="product">
         <tbody>
             <tr>
                 <td>Id</td>
-                <td><input [(ngModel)]="product.id" readonly></td>
+                <td><input [(ngModel)]="product.id" readonly disabled></td>
             </tr>
             <tr>
                 <td>Part Number</td>
@@ -39,5 +39,5 @@
             </tr>
         </tbody>
     </table>
-    <button (click)="saveProduct()" class="btn btn-outline-secondary">Save Changes</button>
+    <button (click)="saveProduct()" class="btn btn-success">Save Changes</button>
 </div>

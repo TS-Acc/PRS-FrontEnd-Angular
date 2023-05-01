@@ -11,11 +11,11 @@ import { UserService } from '../../user/user.service';
 })
 export class LoginComponent {
 
-  pageName = "Login"
+  pageName = "Welcome to PRS"
   username: string = "";
   password: string = "";
   errorMessage: string = "Invalid Username / Password";
-  showErrorMessage: boolean = false;
+  showErrorMessage: boolean = true;
 
   constructor(
     private router: Router,
@@ -32,7 +32,7 @@ export class LoginComponent {
       },
       error: (error) => {
         console.error(error);
-        this.showErrorMessage = true;
+        this.showErrorMessage = false;
       }
     });
   }

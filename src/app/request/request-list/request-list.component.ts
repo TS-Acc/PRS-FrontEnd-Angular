@@ -12,7 +12,7 @@ export class RequestListComponent {
 
   pageName = "Request List"
   requests: Request[] = [];
-
+  
   constructor(
     private requestService: RequestService
   ) { }
