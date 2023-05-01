@@ -1,9 +1,9 @@
 <div>
     <header>
         <app-menu-bar></app-menu-bar>
-        <span>{{ pageName }}</span>
+        <span id="page-name">{{ pageName }}</span>
     </header>
-    <table class="table table-secondary table-hover" *ngIf="requestsInReview">
+    <table class="table table-striped table-sm" *ngIf="requestsInReview">
         <thead>
             <tr>
                 <th>Id</th>
@@ -20,11 +20,11 @@
                 <td>{{ request.id }}</td>
                 <td>{{ request.description }}</td>
                 <td>{{ request.justification }}</td>
-                <td>{{ request.status }}</td>
+                <td class="text-primary fw-bold">{{ request.status }}</td>
                 <td>{{ request.total | currency }}</td>
                 <td>{{ request.users.username }}</td>
                 <td>
-                    <a routerLink="/review/review-request/{{ request.id }}">Review</a>
+                    <button routerLink="/review/review-request/{{ request.id }}" class="btn btn-primary">Review</button>
                 </td>
             </tr>
         </tbody>

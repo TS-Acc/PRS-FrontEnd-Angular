@@ -1,9 +1,9 @@
 <div>
     <header>
         <app-menu-bar></app-menu-bar>
-        <span>{{ pageName }}</span>
+        <span id="page-name">{{ pageName }}</span>
     </header>
-    <table class="table table-secondary table-hover" *ngIf="user">
+    <table class="table table-striped table-sm" *ngIf="user">
         <tbody>
             <tr>
                 <td>Id</td>
@@ -35,17 +35,17 @@
             </tr>
             <tr>
                 <td>Reviewer?</td>
-                <td><input [(ngModel)]="user.isReviewer" readonly></td>
+                <td><input value="{{ user.isReviewer === true ? 'yes' : 'no' }}"></td>
             </tr>
             <tr>
                 <td>Admin?</td>
-                <td><input [(ngModel)]="user.isAdmin" readonly></td>
+                <td><input value="{{ user.isAdmin === true ? 'yes' : 'no' }}"></td>
             </tr>
         </tbody>
     </table>
-    <button (click)="showVerifyDeleteButton()" class="btn btn-outline-danger"><i class="bi bi-trash3-fill"></i></button>
+    <button (click)="showVerifyDeleteButton()" class="btn btn-danger"><i class="bi bi-trash3-fill"></i></button>
     <span *ngIf="displayVerifyButton">
         <span> | </span>
-        <button (click)="removeUser()" class="btn btn-outline-danger">Confirm Delete</button>
+        <button (click)="removeUser()" class="btn btn-danger">Confirm Delete</button>
     </span>
 </div>
