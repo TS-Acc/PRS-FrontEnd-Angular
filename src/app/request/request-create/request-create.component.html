@@ -1,0 +1,43 @@
+<div>
+    <header>
+        <app-menu-bar></app-menu-bar>
+        <span>{{ pageName }}</span>
+    </header>
+    <table class="table table-secondary table-hover">
+        <tbody>
+            <tr>
+                <td>Id</td>
+                <td><input [(ngModel)]="newRequest.id" readonly disabled></td>
+            </tr>
+            <tr>
+                <td>Description</td>
+                <td><input [(ngModel)]="newRequest.description"></td>
+            </tr>
+            <tr>
+                <td>Justification</td>
+                <td><input [(ngModel)]="newRequest.justification"></td>
+            </tr>
+            <tr>
+                <td>Rejection Reason</td>
+                <td><input [(ngModel)]="newRequest.rejectionReason" readonly disabled></td>
+            </tr>
+            <tr>
+                <td>Delivery Mode</td>
+                <td><input [(ngModel)]="newRequest.deliveryMode"></td>
+            </tr>
+            <tr>
+                <td>Status</td>
+                <td><input [(ngModel)]="newRequest.status" readonly disabled></td>
+            </tr>
+            <tr>
+                <td>Total</td>
+                <td><input [(ngModel)]="newRequest.total" readonly disabled></td>
+            </tr>
+            <tr>
+                <td>User</td>
+                <td><input value="{{ user.username }}" readonly disabled></td>
+            </tr>
+        </tbody>
+    </table>
+    <button (click)="createRequest()" class="btn btn-outline-secondary">Create</button>
+</div>

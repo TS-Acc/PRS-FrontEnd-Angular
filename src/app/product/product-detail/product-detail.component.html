@@ -1,0 +1,43 @@
+<div>
+    <header>
+        <app-menu-bar></app-menu-bar>
+        <span>{{ pageName }}</span>
+    </header>
+    <table class="table table-secondary table-hover" *ngIf="product">
+        <tbody>
+            <tr>
+                <td>Id</td>
+                <td><input [(ngModel)]="product.id" readonly></td>
+            </tr>
+            <tr>
+                <td>Part Number</td>
+                <td><input [(ngModel)]="product.partNbr" readonly></td>
+            </tr>
+            <tr>
+                <td>Name</td>
+                <td><input [(ngModel)]="product.name" readonly></td>
+            </tr>
+            <tr>
+                <td>Price</td>
+                <td><input [(ngModel)]="product.price" readonly></td>
+            </tr>
+            <tr>
+                <td>Unit</td>
+                <td><input [(ngModel)]="product.unit" readonly></td>
+            </tr>
+            <tr>
+                <td>Photo Path</td>
+                <td><input [(ngModel)]="product.photoPath"></td>
+            </tr>
+            <tr>
+                <td>Vendor</td>
+                <td><input [(ngModel)]="product.vendors.name"></td>
+            </tr>
+        </tbody>
+    </table>
+    <button (click)="showVerifyDeleteButton()" class="btn btn-outline-danger"><i class="bi bi-trash3-fill"></i></button>
+    <span *ngIf="displayVerifyButton">
+        <span> | </span>
+        <button (click)="removeProduct()" class="btn btn-outline-danger">Confirm Delete</button>
+    </span>
+</div>

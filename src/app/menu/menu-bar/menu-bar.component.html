@@ -1,5 +1,5 @@
 <!--Take the style coded into the nav out and style it with bootstrap-->
-<nav style="background-color: #898989;" class="navbar navbar-expand-lg bg-body-tertiary">
+<!-- <nav style="background-color: #898989;" class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">PRS</a>
         <ul class="navbar-nav">
@@ -11,4 +11,13 @@
             </li>
         </ul>
     </div>
-</nav>
+</nav> -->
+<div>
+    <nav class="navbar navbar-dark bg-dark">
+        <ul>
+            <li *ngFor="let menu of menus">
+                <a routerLink="{{ menu.route }}">{{ menu.display }}</a>
+            </li>
+        </ul>
+    </nav>
+</div>

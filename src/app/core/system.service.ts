@@ -14,11 +14,11 @@ export class SystemService {
     private router: Router
   ) { }
 
-  // checkLogin(): void {
-  //   if(this.userLoggedIn === null) {
-  //     this.router.navigateByUrl("/core/login");
-  //   }
-  // }
+  checkLogin(): void {
+    if(this.userLoggedIn === null) {
+      this.router.navigateByUrl("/core/login");
+    }
+  }
 
   setUserLoggedInToNull(): void {
     if(this.userLoggedIn !== null) {

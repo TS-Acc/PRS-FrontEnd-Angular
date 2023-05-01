@@ -1,0 +1,32 @@
+<div>
+    <header>
+        <app-menu-bar></app-menu-bar>
+        <span>{{ pageName }}</span>
+    </header>
+    <table class="table table-secondary table-hover" *ngIf="requestsInReview">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Description</th>
+                <th>Justification</th>
+                <th>Status</th>
+                <th>Total</th>
+                <th>User</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody class="table-group-divider">
+            <tr *ngFor="let request of requestsInReview">
+                <td>{{ request.id }}</td>
+                <td>{{ request.description }}</td>
+                <td>{{ request.justification }}</td>
+                <td>{{ request.status }}</td>
+                <td>{{ request.total | currency }}</td>
+                <td>{{ request.users.username }}</td>
+                <td>
+                    <a routerLink="/review/review-request/{{ request.id }}">Review</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

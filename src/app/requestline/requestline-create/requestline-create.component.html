@@ -1,0 +1,27 @@
+<div>
+    <header>
+        <app-menu-bar></app-menu-bar>
+        <span>{{ pageName }}</span>
+    </header>
+    <table class="table table-secondary table-hover">
+        <tbody>
+            <tr>
+                <td>Id</td>
+                <td><input [(ngModel)]="newRequestline.id" readonly disabled></td>
+            </tr>
+            <tr>
+                <td>Product</td>
+                <td>
+                    <select [(ngModel)]="newRequestline.productId">
+                        <option *ngFor="let product of products" value="{{ product.id }}">{{ product.name }}</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Quantity</td>
+                <td><input [(ngModel)]="newRequestline.quantity"></td>
+            </tr>
+        </tbody>
+    </table>
+    <button (click)="createRequestline()" class="btn btn-outline-secondary">Create</button>
+</div>
