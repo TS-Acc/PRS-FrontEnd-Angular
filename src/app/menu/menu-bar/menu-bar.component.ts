@@ -12,8 +12,11 @@ import { SystemService } from '../../core/system.service';
 export class MenuBarComponent {
 
   menus: Menu[] = [
-    { display: "Orders", route: "/user/user-list" },
-    { display: "Vendors", route: "/vendor/vendor-list"}
+    { display: "Users", route: "/user/user-list" },
+    { display: "Vendors", route: "/vendor/vendor-list"},
+    { display: "Products", route: "/product/product-list"},
+    { display: "Requests", route: "/request/request-list"},
+    { display: "Reviews", route: "/review/review-list"}
   ];
 
   signOut: Menu = { display: "Sign Out", route: "/core/login"};

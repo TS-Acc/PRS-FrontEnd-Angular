@@ -1,0 +1,64 @@
+<div>
+    <header>
+        <app-menu-bar></app-menu-bar>
+        <span>{{ pageName }}</span>
+    </header>
+    <table *ngIf="request" class="table table-striped table-sm">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Description</th>
+                <th>Justification</th>
+                <th>Rejection Reason</th>
+                <th>Delivery Mode</th>
+                <th>Status</th>
+                <th>Total</th>
+                <th>Username</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{ request.id }}</td>
+                <td>{{ request.description }}</td>
+                <td>{{ request.justification }}</td>
+                <td>{{ request.rejectionReason }}</td>
+                <td>{{ request.deliveryMode }}</td>
+                <td>{{ request.status }}</td>
+                <td>{{ request.total | currency }}</td>
+                <td>{{ request.users.username }}</td>
+                <td>
+                    <a (click)="reviewRequest(request)" routerLink="/request/request-lines/{{ request.id }}">Submit For Review</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <hr>
+    <span *ngIf="request"><a routerLink="/requestline/requestline-create/{{ request.id }}">Create</a></span>
+    <table *ngIf="request" class="table table-striped table-sm">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Product</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Line Total</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let requestLine of request.requestLines">
+                <td>{{ requestLine.id }}</td>
+                <td>{{ requestLine.products.name }}</td>
+                <td>{{ requestLine.products.price | currency }}</td>
+                <td>{{ requestLine.quantity }}</td>
+                <td>{{ requestLine.products.price * requestLine.quantity | currency }}</td>
+                <td>
+                    <a routerLink="/requestline/requestline-change/{{ requestLine.id }}">Edit</a>
+                    <span> | </span>
+                    <button (click)="deleteRequestline(requestLine.id)" class="btn btn-danger btn-sm">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

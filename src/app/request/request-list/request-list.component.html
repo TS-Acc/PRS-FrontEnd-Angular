@@ -1,0 +1,41 @@
+<div>
+    <header>
+        <app-menu-bar></app-menu-bar>
+        <span>{{ pageName }}</span>
+        <span> | </span>
+        <button routerLink="/request/request-create" class="btn btn-outline-secondary btn-sm">Create New Request <i class="bi bi-plus-circle-fill"></i></button>
+    </header>
+    <table class="table table-secondary table-hover">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Description</th>
+                <th>Justification</th>
+                <th>Rejection Reason</th>
+                <th>Delivery Mode</th>
+                <th>Status</th>
+                <th>Total</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody class="table-group-divider">
+            <tr *ngFor="let request of requests">
+                <td>{{ request.id }}</td>
+                <td>{{ request.description }}</td>
+                <td>{{ request.justification }}</td>
+                <td>{{ request.rejectionReason }}</td>
+                <td>{{ request.deliveryMode }}</td>
+                <td>{{ request.status }}</td>
+                <td>{{ request.total | currency }}</td>
+                <td>
+                    <button routerLink="/request/request-detail/{{ request.id }}" class="btn">Detail</button>
+                    <span> | </span>
+                    <button routerLink="/request/request-lines/{{ request.id }}" class="btn">Lines</button>
+                    <span> | </span>
+                    <button routerLink="/request/request-change/{{ request.id }}" class="btn"><i class="bi bi-gear-fill"></i></button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
